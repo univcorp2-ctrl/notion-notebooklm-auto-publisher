@@ -4,7 +4,7 @@
 
 Repository Settings → Secrets and variables → Actions → New repository secret から必要な値を登録します。
 
-必須ではなく、dry-runなら空で動きます。本番配信時だけ以下が必要です。
+dry-runなら空で動きます。本番配信時だけ以下が必要です。
 
 - `OPENAI_API_KEY`
 - `NOTION_TOKEN`
