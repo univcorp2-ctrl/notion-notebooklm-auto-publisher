@@ -23,6 +23,10 @@ flowchart LR
   Quality --> Artifact[GitHub Actions Artifact]
 ```
 
+## GPT Image 2を使う部分
+
+`src/creator_pipeline/media.py` の `MediaBuilder._generate_openai_images` が `OPENAI_IMAGE_MODEL=gpt-image-2` を使います。dry-runまたはAPIキー未設定時はPillowで同じサイズのプレースホルダーを作るため、CIでも安全に検証できます。
+
 ## OSS利用
 
 - Typer: CLI
@@ -33,13 +37,7 @@ flowchart LR
 - pytest/Ruff: テストと静的チェック
 - FFmpeg: 動画レンダリング
 
-## GPT Image 2の使い方
-
-`src/creator_pipeline/media.py` の `MediaBuilder._generate_openai_images` が `OPENAI_IMAGE_MODEL=gpt-image-2` を使います。dry-runまたはAPIキー未設定時はPillowで同じサイズのプレースホルダーを作るため、CIでも安全に検証できます。
-
 ## Quality Gate
-
-`src/creator_pipeline/quality.py` が以下を確認します。
 
 - 2つ以上の素材があるか
 - 文章量が十分か
