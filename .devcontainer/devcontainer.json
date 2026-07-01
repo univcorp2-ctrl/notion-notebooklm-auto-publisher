@@ -1,0 +1,1 @@
+{"name":"notion-notebooklm-auto-publisher","image":"mcr.microsoft.com/devcontainers/python:3.11","features":{"ghcr.io/devcontainers/features/ffmpeg:1":{}},"postCreateCommand":"python -m pip install -U pip && python -m pip install -e '.[dev]'","customizations":{"vscode":{"extensions":["ms-python.python","charliermarsh.ruff"]}}}
