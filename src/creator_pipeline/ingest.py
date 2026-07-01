@@ -33,14 +33,7 @@ def load_sources_from_file(path: Path) -> list[ContentSource]:
 
 
 def _source_from_mapping(item: dict, path: Path) -> ContentSource:
-    return ContentSource(
-        title=str(item.get("title") or _pretty_title(path.stem)),
-        body=str(item.get("body") or item.get("content") or item.get("text") or "").strip(),
-        source_type=str(item.get("source_type") or "json"),
-        source_url=item.get("source_url") or item.get("url") or str(path),
-        author=item.get("author"),
-        license_note=item.get("license_note") or item.get("license"),
-    )
+    return ContentSource(title=str(item.get("title") or _pretty_title(path.stem)), body=str(item.get("body") or item.get("content") or item.get("text") or "").strip(), source_type=str(item.get("source_type") or "json"), source_url=item.get("source_url") or item.get("url") or str(path), author=item.get("author"), license_note=item.get("license_note") or item.get("license"))
 
 
 def _pretty_title(value: str) -> str:
