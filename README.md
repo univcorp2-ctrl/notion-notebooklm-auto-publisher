@@ -103,25 +103,6 @@ Artifact名: `content-pipeline-outputs`
 
 詳細は [docs/setup.md](docs/setup.md) を参照してください。
 
-## Notionタスクを作る
-
-```bash
-content-pipeline create-notion-task \
-  --title "AIラジオ: 2つのNotebookLM素材を混ぜて動画化" \
-  --notes "NotionとNotebookLMの素材を統合し、記事・音声・縦動画・YouTube/TikTok投稿まで自動化する" \
-  --source-url "https://example.com/source-a" \
-  --source-url "https://example.com/source-b"
-```
-
-Notion接続が未設定の場合は `dist/notion_task_draft.json` に下書きを保存します。
-
 ## 本番で必要なこと
-
-1. Notion Integrationを作成し、タスクDBを共有する
-2. OpenAI API KeyをGitHub Secretsへ登録する
-3. YouTube OAuth認証JSONを用意する
-4. TikTok Developer AppでContent Posting APIを使える状態にする
-5. NotebookLM Enterpriseを使う場合はGoogle Cloud側でAPI権限を用意する
-6. Actionsの **Generate and Publish Content** を `dry_run=false` / `publish=true` で実行する
 
 外部プラットフォームのOAuth、審査、アプリ承認だけはアカウント所有者の操作が必要です。それ以外の生成・検証・出力は自動化済みです。
